@@ -8,6 +8,7 @@
 <button>向页面发送 HTTP GET 请求，然后获得返回的结果</button>
     
 <script language="JScript">
+    
 var LocString=String(window.document.location.href);
 function GetQueryString(str){
 var rs=new RegExp("(^|)"+str+"=([^&]*)(&|$)","gi").exec(LocString),tmp;
@@ -19,7 +20,7 @@ return "没有这个参数";
  
 
     
-     $(document).ready(function(){
+   
   $("button").click(function(){
       
       $.ajax({
@@ -33,7 +34,7 @@ return "没有这个参数";
   document.write('error'); 
   } 
 });
-        });
+     
 });
  
  
