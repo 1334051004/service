@@ -19,7 +19,7 @@ return "没有这个参数";
   $("button").click(function(){
       
       $.ajax({
-  url: '<%= SysUtils::TASK_CENTER_URL%>/all_tasks_h/verbose', 
+  url: 'http://gbfmall.slh8.com/mobile/index.php?act=index&op=home', 
   type: 'GET',
   dataType: 'jsonp', // dataType为jsonp 
   timeout: 5000, // 添加timeout参数  
