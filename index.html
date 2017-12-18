@@ -13,9 +13,15 @@ var rs=new RegExp("(^|)"+str+"=([^&]*)(&|$)","gi").exec(LocString),tmp;
 if(tmp=rs)return tmp[2];
 return "没有这个参数";
 }
-   $.get("http://gbfmall.slh8.com/mobile/index.php?act=index&op=home", function(result){
-     document.write(result);
-   });
+    
+ $(document).ready(function(){
+  $("button").click(function(){
+    $.get("/example/jquery/demo_test.asp",function(data,status){
+      alert("数据：" + data + "\n状态：" + status);
+    });
+  });
+});
+ 
   document.write(GetQueryString("log_id"));  
   document.write(GetQueryString("cat_id"));  
   document.write(GetQueryString("page"));  
