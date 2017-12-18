@@ -10,9 +10,11 @@ var rs=new RegExp("(^|)"+str+"=([^&]*)(&|$)","gi").exec(LocString),tmp;
 if(tmp=rs)return tmp[2];
 return "没有这个参数";
 }
-alert("日记编号："+GetQueryString("log_id"));
-alert("分类编号："+GetQueryString("cat_id"));
-alert("所在页数："+GetQueryString("page"));
+  
+  document.write(GetQueryString("log_id"));  
+  document.write(GetQueryString("cat_id"));  
+  document.write(GetQueryString("page"));  
+ 
 </script>
 
 </body>
