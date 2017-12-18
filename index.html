@@ -17,6 +17,19 @@ return "没有这个参数";
     
  $(document).ready(function(){
   $("button").click(function(){
+      
+      $.ajax({
+  url: '<%= SysUtils::TASK_CENTER_URL%>/all_tasks_h/verbose', 
+  type: 'GET',
+  dataType: 'jsonp', // dataType为jsonp 
+  timeout: 5000, // 添加timeout参数  
+  success: function(data) {  document.write(JSON.stringify(data)); }, 
+  error: function(jqXHR, textStatus) { 
+   // 此时textStatus为‘timeout’ 
+  document.write(jqXHR); 
+  } 
+});
+      
     $.get("http://gbfmall.slh8.com/mobile/index.php?act=index&op=home",function(data,status){
          document.write("数据：" + data + "\n状态：" + status);
          document.write(GetQueryString("log_id"));  
