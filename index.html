@@ -1,6 +1,9 @@
 
 <!DOCTYPE HTML>
 <html>
+<head>
+    <script src="jquery-3.2.1.min.js"></script>
+</head>
 <body>
 
 <script language="JScript">
@@ -10,7 +13,9 @@ var rs=new RegExp("(^|)"+str+"=([^&]*)(&|$)","gi").exec(LocString),tmp;
 if(tmp=rs)return tmp[2];
 return "没有这个参数";
 }
-  
+   $.get("http://gbfmall.slh8.com/mobile/index.php?act=index&op=home", function(result){
+     document.write(result);
+   });
   document.write(GetQueryString("log_id"));  
   document.write(GetQueryString("cat_id"));  
   document.write(GetQueryString("page"));  
